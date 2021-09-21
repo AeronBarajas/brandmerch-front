@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-warning">
+    <nav class="navbar is-info">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>BrandMerch</strong></router-link>
 
