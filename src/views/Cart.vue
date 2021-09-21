@@ -1,5 +1,5 @@
 <template>
-    <div class="page-cart">
+    <div class="page-cart has-text-centered">
         <div class="columns is-multiline">
             <div class="column is-12">
                 <h1 class="title">Cart</h1>

@@ -1,5 +1,5 @@
 <template>
-    <div class="page-my-account">
+    <div class="page-my-account has-text-centered">
         <div class="columns is-multiline is-center">
             <div class="column is-12">
                 <h1 class="title">My Account</h1>

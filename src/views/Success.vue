@@ -1,8 +1,8 @@
 <template>
-    <div class="page-success">
+    <div class="page-success has-text-centered">
         <div class="columns is-centered">
-            <div class="column is-12">
-                <h1 class="title">Buy something else</h1>
+            <div class="column is-12 is-centered">
+                <h1 class="title">Order is Proccessing</h1>
             </div>
         </div>
     </div>
