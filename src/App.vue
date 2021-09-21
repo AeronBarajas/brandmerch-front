@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-dark">
+    <nav class="navbar is-warning">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>BrandMerch</strong></router-link>
 
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="control">
-                  <button class="button is-success">
+                  <button class="button is-info">
                       <span class="icon">
                       <i class="fas fa-search"></i>
                       </span>
@@ -46,7 +46,7 @@
                 <router-link to="/log-in" class="button is-light">Login</router-link>
               </template>
 
-              <router-link to="/cart" class="button is-success">
+              <router-link to="/cart" class="button is-info">
                 <span class="icon"><i class="fas fa-shopping-cart"></i></span>
                 <span>Cart ({{ cartTotalLength }})</span>
               </router-link>
