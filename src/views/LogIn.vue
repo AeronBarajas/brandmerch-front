@@ -25,7 +25,7 @@
 
                     <div class="field">
                         <div class="control">
-                            <button class="button is-warning">Login</button>
+                            <button class="button is-info">Login</button>
                         </div>
                     </div>
 

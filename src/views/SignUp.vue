@@ -32,7 +32,7 @@
 
                     <div class="field">
                         <div class="control">
-                            <button class="button is-warning">Sign Up</button>
+                            <button class="button is-info">Sign Up</button>
                         </div>
                     </div>
 

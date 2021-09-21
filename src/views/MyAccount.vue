@@ -1,6 +1,6 @@
 <template>
     <div class="page-my-account">
-        <div class="columns is-multiline">
+        <div class="columns is-multiline is-center">
             <div class="column is-12">
                 <h1 class="title">My Account</h1>
             </div>
@@ -12,7 +12,7 @@
                     v-bind:order="order" />
             </div>
             <div class="column is-12">
-                <button @click="logout()" class="button is-danger">Logout</button>
+                <button @click="logout()" class="button is-danger is-light">Logout</button>
             </div>
         </div>
     </div>

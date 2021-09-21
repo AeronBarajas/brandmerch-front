@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="control">
-                        <a class="button is-warning" @click="addToCart()">Add to cart</a>
+                        <a class="button is-info" @click="addToCart()">Add to cart</a>
                     </div>
                 </div>
             </div>
