@@ -1,30 +1,113 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="wrapper">
+    <nav class="navbar is-dark">
+      <div class="navbar-brand">
+        <router-link to="/" class="navbar-item"><strong>BrandMerch</strong></router-link>
+
+        <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu }">
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <form method="get" action="/search">
+              <div class="field has-addons">
+                <div class="control">
+                  <input type="text" class="input" placeholder="Search" name="query">
+                </div>
+
+                <div class="control">
+                  <button class="button is-success">
+                      <span class="icon">
+                      <i class="fas fa-search"></i>
+                      </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <router-link to="/clothing" class="navbar-item">Clothing</router-link>
+          <router-link to="/accessories" class="navbar-item">Accessories</router-link>
+
+          <div class="navbar-item">
+            <div class="buttons">
+              <template v-if="$store.state.isAuthenticated">
+                <router-link to="/my-account" class="button is-light">My Account</router-link>
+              </template>
+
+              <template v-else>
+                <router-link to="/log-in" class="button is-light">Login</router-link>
+              </template>
+
+              <router-link to="/cart" class="button is-success">
+                <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                <span>Cart ({{ cartTotalLength }})</span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading }">
+      <div class="lds-dual-ring"></div>
+    </div>
+
+    <section class="section">
+      <router-view/>
+    </section>
+
+    <footer class="footer">
+      <p class="has-text-centered">Copyright 2021</p>
+    </footer>
   </div>
-  <router-view/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import axios from 'axios'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  data() {
+    return {
+      showMobileMenu: false,
+      cart: {
+        items: []
+      }
     }
+  },
+  beforeCreate() {
+    this.$store.commit('initializeStore')
+
+    const token = this.$store.state.token
+    if (token) {
+        axios.defaults.headers.common['Authorization'] = "Token " + token
+    } else {
+        axios.defaults.headers.common['Authorization'] = ""
+    }
+  },
+  mounted() {
+    this.cart=this.$store.state.cart
+  },
+  computed: {
+      cartTotalLength() {
+          let totalLength = 0
+          for (let i = 0; i < this.cart.items.length; i++) {
+              totalLength += this.cart.items[i].quantity
+          }
+          return totalLength
+      }
   }
 }
+</script>
+
+<style lang="scss">
+@import '../node_modules/bulma';
 </style>
