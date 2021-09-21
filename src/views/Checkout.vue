@@ -81,7 +81,7 @@
                 <div id="card-element" class="mb-5"></div>
                 <template v-if="cartTotalLength">
                     <hr>
-                    <button class="button is-warning" @click="submitForm">Pay with Stripe</button>
+                    <button class="button is-primary" @click="submitForm">Pay with Stripe</button>
                 </template>
             </div>
         </div>

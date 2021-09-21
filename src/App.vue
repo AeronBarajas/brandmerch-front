@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-info">
+    <nav class="navbar is-dark">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>BrandMerch</strong></router-link>
 
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="control">
-                  <button class="button is-warning">
+                  <button class="button is-info">
                       <span class="icon">
                       <i class="fas fa-search"></i>
                       </span>
@@ -60,7 +60,7 @@
       <div class="lds-dual-ring"></div>
     </div>
 
-    <section class="section">
+    <section class="section is-light">
       <router-view/>
     </section>
 
