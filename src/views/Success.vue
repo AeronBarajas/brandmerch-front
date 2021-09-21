@@ -4,7 +4,7 @@
             <div class="column is-12 is-centered">
                 <h1 class="title">Order Confirmed</h1>
                 <div class="buttons">
-                <router-link to="/my-account" class="button is-primary">My Account</router-link>
+                <router-link to="/my-account" class="button is-primary is-centered">View Your Orders</router-link>
                 </div>
             </div>
         </div>
