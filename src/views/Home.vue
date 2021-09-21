@@ -6,7 +6,7 @@
                 Welcome to BrandMerch
             </p>
             <p class="subtitle">
-                It's a store.
+                All in good faith.
             </p>
         </div>
     </section>
